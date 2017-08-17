@@ -30,6 +30,3 @@ d = {
 }
 
 print( dict_to_list(d) )
-
-#for m in get_dict_metrics(d):
-#	print(m)
