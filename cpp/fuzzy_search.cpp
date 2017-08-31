@@ -1,14 +1,17 @@
-#include <iostream>
-#include <string>
-
-using namespace std;
-
 /*
+ * https://femida.yandex-team.ru/problems/2203
+ *
  * Функция fuzzysearch ищет строку pattern в строке str
  * Возвращает:
  *  - true, если pattern является подпоследовательностью внутри str, не обязательно непрерывной
  *  - false, иначе
  */
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 bool fuzzysearch(string pattern, string str);
 
 int main(void) {
