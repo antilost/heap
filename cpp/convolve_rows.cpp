@@ -63,6 +63,10 @@ string get_convolved_row(vector<int>& v) {
         }
         i++;
     }
+    if (more_than_one) {
+        r += '-';
+        r += to_string(v[i-1]);
+    }
 
     return r;
 }
