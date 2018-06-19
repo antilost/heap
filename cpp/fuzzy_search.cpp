@@ -1,8 +1,5 @@
 /*
- * https://femida.yandex-team.ru/problems/2203
- *
- * Функция fuzzysearch ищет строку pattern в строке str
- * Возвращает:
+ * Функция fuzzysearch возвращает:
  *  - true, если pattern является подпоследовательностью внутри str, не обязательно непрерывной
  *  - false, иначе
  */
@@ -15,7 +12,7 @@ using namespace std;
 bool fuzzysearch(string pattern, string str);
 
 int main(void) {
-	cout << fuzzysearch("car", "cartwheel") << endl;        // true
+    cout << fuzzysearch("car", "cartwheel") << endl;        // true
     cout << fuzzysearch("cwhl", "cartwheel") << endl;       // true
     cout << fuzzysearch("cwheel", "cartwheel") << endl;     // true
     cout << fuzzysearch("cartwheel", "cartwheel") << endl;  // true

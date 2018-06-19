@@ -1,10 +1,9 @@
 /*
- * https://femida.yandex-team.ru/problems/3325
- *
- * К исходной строке применили 3 преобразования:
- * 1. удалили все пробелы и знаки препинания
- * 2. все подряд идущие одинаковые буквы заменили одной такой буквой
- * 3. в произвольные места вставили удвоенные буквы произвольное количество раз
+ * Decoder
+ * Source string encoded via algorithm:
+ * 1. Remove all spaces, commas and dots
+ * 2. Replace every sequence of several times repeated letter with only one that letter
+ * 3. Inserted doubled letters at random places
  */
 
 #include <iostream>
