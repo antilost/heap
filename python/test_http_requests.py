@@ -11,7 +11,7 @@ import getpass
 print('Get github user info')
 login = raw_input('login: ')
 password = getpass.getpass('password: ')
-result = requests.get('https://api.github.com/user', auth=(login, password))
+result = requests.get('https://api.github.com/user', auth=(login, password)) #GET
 print("HTTP GET request code: " + str(result.status_code))
 print("Content-type: " + str(result.headers['content-type']))
 
