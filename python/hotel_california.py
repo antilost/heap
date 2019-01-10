@@ -58,4 +58,3 @@ for input, result in test_cases:
     assert(get_max_guests_at_hotel(input) == result)
 for input, result in test_cases:
     assert(get_max_guests_at_hotel_with_default_sort(input) == result)
-    
