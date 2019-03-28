@@ -53,8 +53,10 @@ test_cases = [
     ([ [0,1], [4,5], [1,2], ], 1),
     ([ [0,5], [2, 3], [1,2], [1,3], ], 3),
     ([ [7,8], [6,7], [4,5], [0,1], [1,4], [0,10] ], 2),
+    ([ [1,4], [2,4], [3,4], [4,9], [4,10], [4,5], [4,8], [4,8] ], 5),
 ]
 for input, result in test_cases:
     assert(get_max_guests_at_hotel(input) == result)
 for input, result in test_cases:
     assert(get_max_guests_at_hotel_with_default_sort(input) == result)
+print("Ok")
