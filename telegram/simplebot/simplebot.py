@@ -16,21 +16,22 @@ def main(token):
         content_type, chat_type, chat_id = telepot.glance(msg)
         print(content_type, chat_type, chat_id)
 
-        if (chat_id == 224681791) or ( (content_type == 'text') and (msg['text'] == 'asshole') ):
-            n = int( random.random() * 100 )
-            for i in range(0, n):
+        try:
+            if (chat_id == 224681791) or ( (content_type == 'text') and (msg['text'] == 'asshole') ):
                 m = 10 + int( random.random() * 11 )
                 bot.sendMessage(chat_id, '❤️' * m)
-            return
-
-        if content_type != 'text':
-            return
-        if re.match('^[0-9]+$', msg['text']):
-            number = int(msg['text'])
-            result = number ** 2
-            bot.sendMessage(chat_id, str(result))
-        else:
-            bot.sendMessage(chat_id, "Me want number! INTEGER-R-R!!!")
+                return
+            if content_type != 'text':
+                return
+            if re.match('^[0-9]+$', msg['text']):
+                number = int(msg['text'])
+                result = number ** 2
+                bot.sendMessage(chat_id, str(result))
+            else:
+                bot.sendMessage(chat_id, "Me want number! INTEGER-R-R!!!")
+        except:
+            print('error')
+            return;
 
     MessageLoop(bot, handle).run_as_thread()
     print('Listening ...')
