@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-def rle_compress(str):
+def rle(str):
     prev = None
     count = 0
     result = ""
@@ -24,9 +24,10 @@ def rle_compress(str):
             result += prev
     return result
 
-assert( rle_compress("AABBCDDDDFFFFFF") == "A2B2CD4F6" )
-assert( rle_compress("AAAAAAAAAAE") == "A10E" )
-assert( rle_compress("") == "" )
-assert( rle_compress("dd") == "d2" )
-assert( rle_compress("d") == "d" )
-print("Ok")
+assert( rle("AABBCDDDDFFFFFF") == "A2B2CD4F6" )
+assert( rle("AAAAAAAAAAE") == "A10E" )
+assert( rle("") == "" )
+assert( rle("dd") == "d2" )
+assert( rle("d") == "d" )
+print("ok")
+
