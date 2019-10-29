@@ -18,14 +18,14 @@ class List(object):
     
     def values(self):
         n = self.head
-        while (not (n is None)):
+        while (n is not None):
             yield n.value
             n = n.next
 
     def reverse_list(self):
         h = self.head
         prev = None
-        while (not (h is None)):
+        while (h is not None):
             t = h.next
             h.next = prev
             prev = h
