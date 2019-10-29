@@ -13,7 +13,7 @@ int main(void) {
     w = 0;
     int smile = 0;
     while (str[r]) {
-        printf("%s %d %d %d\n", (char*)str, r, w, smile);
+        //printf("%s %d %d %d\n", (char*)str, r, w, smile);
  
         if (str[r] == ':') {
             smile = 1;

@@ -16,15 +16,18 @@ const int CASTLES_COUNT = 3;
 int check_chess_piece_position(struct ChessPos chess_piece);
 void explain_validation_error(int error_code);
 
-int main(void)
+int main()
 {
+    int i, j;
     struct ChessPos white_rooks[CASTLES_COUNT];
     struct ChessPos black_king;
 
     // Data input
     printf("Enter black king position (e.g., d7): ");
-    scanf("%c%d", &black_king.x, &black_king.y );
-    getchar();
+    scanf("%1s,%d", &black_king.x, &black_king.y );
+    //getchar();
+
+    printf("black_king: '%c', '%d'\n", black_king.x, black_king.y);
 
     int error_code = check_chess_piece_position(black_king);
     if (error_code)
@@ -33,11 +36,13 @@ int main(void)
         return 1;
     }
 
-    for (int i = 0; i < CASTLES_COUNT; i++)
+    for (i = 0; i < CASTLES_COUNT; i++)
     {
         printf("Enter rook #%d position: ", i);
-        scanf("%c%d", &( white_rooks[i].x ), &( white_rooks[i].y ) );
-        getchar();
+        scanf("%1s,%d", &( white_rooks[i].x ), &( white_rooks[i].y ) );
+        printf("white_rooks #%d: '%c', '%d'\n", i, white_rooks[i].x, white_rooks[i].y);
+
+        //getchar();
         //fflush(stdin);
 
         error_code = check_chess_piece_position(white_rooks[i]);
@@ -51,9 +56,9 @@ int main(void)
     }
 
     // Validate chess pieces positions
-    for (int i = 0; i < CASTLES_COUNT; i++)
+    for (i = 0; i < CASTLES_COUNT; i++)
     {
-        for (int j = i + 1; j < CASTLES_COUNT; j++)
+        for (j = i + 1; j < CASTLES_COUNT; j++)
         {
             if ( (white_rooks[i].x == white_rooks[j].x) && (white_rooks[i].y == white_rooks[j].y) )
             {
@@ -71,7 +76,7 @@ int main(void)
     }
 
     // Check king threats
-    for (int i = 0; i < CASTLES_COUNT; i++)
+    for (i = 0; i < CASTLES_COUNT; i++)
     {
         if ( (white_rooks[i].x == black_king.x) || (white_rooks[i].y == black_king.y) )
         {
