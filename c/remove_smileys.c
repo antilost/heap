@@ -5,8 +5,9 @@
  */
 
 int main(void) {
-    char str[] = "Remov:-(((((e smiles :-) like ':-))))' or ':-('";
+    char str[] = "Remov:-((((()e smiles :-) like ':-))))' or ':-(', but not remove :-";
 
+    char sk;
     int r, w;
     r = 0;
     w = 0;
@@ -18,8 +19,12 @@ int main(void) {
             smile = 1;
         } else if ( (str[r] == '-') && (smile == 1) ) {
             smile = 2;
-        } else if ( (smile >= 2) && ( (str[r] == ')') || (str[r] == '(') ) ) {
+            sk = '#';
+        } else if ( (smile >= 2) && (
+                ( (sk == '#') && ( (str[r] == '(') || (str[r] == ')') ) )
+                 || (str[r] == sk) ) ) {
             smile ++;
+            sk = str[r];
         } else {
             if (smile >= 3) {
                 w -= smile;
